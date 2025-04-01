@@ -1,0 +1,63 @@
+GET http://localhost:3001/api/films HTTP/1.1
+###
+GET http://localhost:3001/api/films/14 HTTP/1.1
+###
+POST http://localhost:3001/api/films HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "title": "Il Padrino",
+    "favorite": 1,
+    "watchdate": "2025-03-10",
+    "rating": 3
+
+}
+
+###
+DELETE  http://localhost:3001/api/films/13 HTTP/1.1
+
+####
+
+PUT http://localhost:3001/api/films/15/favorite HTTP/1.1
+Content-Type: application/json
+
+{   
+    "id" : 15,
+    "favorite": 1
+}
+
+####
+
+POST http://localhost:3001/api/films/14/rating HTTP/1.1
+Content-Type: application/json
+
+{   
+    "id" : 14,
+    "rating": -4
+}
+
+### 
+
+GET http://localhost:3001/api/films?filter=unseen HTTP/1.1
+###
+
+GET http://localhost:3001/api/films?filter=best HTTP/1.1
+###
+GET http://localhost:3001/api/films?filter=favorite HTTP/1.1
+###
+GET http://localhost:3001/api/films?filter=lastmonth HTTP/1.1
+###
+GET http://localhost:3001/api/films?filter=unseen HTTP/1.1
+
+
+###
+PUT http://localhost:3001/api/films/15 HTTP/1.1
+Content-Type: application/json
+
+{   
+    "id": 15,
+    "title": "Scirec",
+    "favorite": 0,
+    "watchDate": "2024-05-03"
+}
